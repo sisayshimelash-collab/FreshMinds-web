@@ -12,8 +12,23 @@ import {
   Star,
   Send,
   Sparkles,
-  ChevronRight
+  ChevronRight,
+  ChevronLeft,
+  Wifi,
+  Battery,
+  Trophy,
+  Play,
+  ShieldCheck,
+  Check,
+  ArrowRight,
+  Bell,
+  GraduationCap,
+  Lock,
+  Lightbulb,
+  Radio,
+  FileText
 } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 export default function PhoneMockup({ activeMode = 'dashboard', onModeChange }) {
   const [internalMode, setInternalMode] = useState(activeMode);
@@ -29,282 +44,803 @@ export default function PhoneMockup({ activeMode = 'dashboard', onModeChange }) 
 
   return (
     <div className="phone-mockup-wrapper">
-      {/* Floating Badges */}
-      <div className="mock-floating-badge mock-badge-left">
-        <div style={{ background: '#ECFDF5', padding: '6px', borderRadius: '10px', color: '#059669' }}>
+      {/* Dynamic Floating Badges */}
+      <div className="mock-floating-badge mock-badge-left animate-float-slow">
+        <div className="badge-icon-wrap" style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#22C55E' }}>
           <DownloadCloud size={18} />
         </div>
         <div>
-          <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#0F172A' }}>Offline Mode</div>
-          <div style={{ fontSize: '10px', color: '#64748B' }}>Study without data</div>
+          <div className="badge-title">100% Offline Ready</div>
+          <div className="badge-sub">Study videos & notes data-free</div>
         </div>
       </div>
 
-      <div className="mock-floating-badge mock-badge-right">
-        <div style={{ background: '#FFFBEB', padding: '6px', borderRadius: '10px', color: '#D97706' }}>
+      <div className="mock-floating-badge mock-badge-right animate-float-delayed">
+        <div className="badge-icon-wrap" style={{ background: 'rgba(249, 115, 22, 0.15)', color: '#F97316' }}>
           <Flame size={18} />
         </div>
         <div>
-          <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#0F172A' }}>5-Day Streak</div>
-          <div style={{ fontSize: '10px', color: '#64748B' }}>+240 Points</div>
+          <div className="badge-title">5-Day Study Streak</div>
+          <div className="badge-sub">+480 XP Points earned</div>
         </div>
       </div>
 
-      {/* Device Frame */}
+      <div className="mock-floating-badge mock-badge-bottom animate-float-slow">
+        <div className="badge-icon-wrap" style={{ background: 'rgba(59, 130, 246, 0.18)', color: '#3B82F6' }}>
+          <Trophy size={18} />
+        </div>
+        <div>
+          <div className="badge-title">Live Competitions</div>
+          <div className="badge-sub">6K+ students competing nationwide</div>
+        </div>
+      </div>
+
+      {/* Realistic Phone Frame */}
       <div className="phone-mockup">
-        {/* Notch */}
+        {/* Dynamic Island / Speaker */}
         <div className="phone-notch">
           <div className="notch-camera"></div>
           <div className="notch-speaker"></div>
         </div>
 
-        {/* Screen Display */}
+        {/* Screen Display — Dark Navy Theme (Directly from FreshMinds Mobile App #0F1624) */}
         <div className="phone-screen">
-          {/* SCREEN: DASHBOARD */}
+          {/* Status Bar */}
+          <div className="mock-status-bar">
+            <span className="mock-time">9:41</span>
+            <div className="mock-status-icons">
+              <span className="mock-signal">5G</span>
+              <Wifi size={13} />
+              <Battery size={14} />
+            </div>
+          </div>
+
+          {/* ============================================================
+              SCREEN 1: DASHBOARD (Home Screen - Exact Dashboard.screen.jsx)
+              ============================================================ */}
           {currentMode === 'dashboard' && (
-            <>
-              <div className="mock-app-header">
-                <div className="mock-status-row">
-                  <div>
-                    <span className="mock-user-greet">Good Morning 👋</span>
-                    <h4 className="mock-user-name">Freshman Student</h4>
+            <div className="mock-screen-content">
+              {/* Header: Greeting, XP Flame Badge, and Notification Bell */}
+              <div className="mock-rn-header">
+                <div className="mock-rn-header-left">
+                  <span className="mock-rn-greeting">Good morning</span>
+                  <h4 className="mock-rn-username">Student 👋</h4>
+                </div>
+                <div className="mock-rn-header-actions">
+                  {/* Points Badge */}
+                  <div 
+                    className="mock-rn-points-badge"
+                    onClick={() => handleSelect('stats')}
+                    title="View Weekly Progress"
+                  >
+                    <Flame size={14} fill="#FFFFFF" color="#FFFFFF" />
+                    <span>480</span>
                   </div>
-                  <div className="mock-points-badge">
-                    <Star size={12} fill="#F59E0B" color="#F59E0B" />
-                    <span>240 Pts</span>
+                  {/* Notification Button with Red Dot */}
+                  <div className="mock-rn-notification-btn">
+                    <Bell size={16} color="#FFFFFF" />
+                    <span className="mock-rn-notif-dot"></span>
                   </div>
                 </div>
+              </div>
 
-                {/* Academy Banner */}
+              <div className="mock-rn-scroll-body">
+                {/* 1. FreshMinds Academy Banner (Exact academyBanner) */}
                 <div className="mock-academy-banner">
-                  <div className="mock-academy-title">FreshMinds Academy 🎓</div>
-                  <div className="mock-academy-sub">Your Key to Freshman Success!</div>
-                  <div className="mock-telegram-pill">
-                    <Send size={10} />
-                    <span>Telegram: @FreshMinds_Academy</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mock-app-body">
-                {/* Active Program */}
-                <div className="mock-section-title">
-                  <span>Current Program</span>
-                  <span style={{ color: '#7C3AED', fontSize: '10px' }}>Natural Science</span>
-                </div>
-
-                {/* Continue Learning Card */}
-                <div className="mock-card" style={{ borderLeft: '4px solid #7C3AED' }}>
-                  <div className="mock-card-icon" style={{ background: '#EDE9FE', color: '#7C3AED' }}>
-                    📐
-                  </div>
-                  <div className="mock-card-info">
-                    <div className="mock-card-title">General Physics 101</div>
-                    <div className="mock-card-meta">Chapter 2: Kinematics • 65% completed</div>
-                    <div style={{ width: '100%', height: '4px', background: '#E2E8F0', borderRadius: '2px', marginTop: '6px' }}>
-                      <div style={{ width: '65%', height: '100%', background: '#7C3AED', borderRadius: '2px' }}></div>
+                  <div className="mock-academy-content">
+                    <div className="mock-academy-left">
+                      <div className="mock-welcome-badge">
+                        <Sparkles size={11} color="#F59E0B" />
+                        <span>Premium Learning</span>
+                      </div>
+                      <h4 className="mock-academy-title">FreshMinds Academy</h4>
+                      <p className="mock-academy-subtitle">Learn • Practice • Excel</p>
+                      <div className="mock-academy-divider"></div>
+                      <a 
+                        href="https://t.me/freshminds_academy" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="mock-telegram-cta"
+                      >
+                        <div className="mock-telegram-circle">
+                          <Send size={12} color="#0088CC" />
+                        </div>
+                        <span className="mock-telegram-text">Join Telegram Community</span>
+                        <ChevronRight size={13} color="rgba(255,255,255,0.7)" />
+                      </a>
+                    </div>
+                    <div className="mock-academy-right">
+                      <div className="mock-academy-icon-circle">
+                        <GraduationCap size={36} color="#FFFFFF" />
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Quick Practice Mode Card */}
-                <div className="mock-card" style={{ background: '#EFF6FF', borderColor: '#BFDBFE' }}>
-                  <div className="mock-card-icon" style={{ background: '#3B82F6', color: 'white' }}>
-                    ⚡
+                {/* 2. CompetitionBanner (Exact CompetitionBanner.jsx) */}
+                <div 
+                  className="mock-rn-comp-banner"
+                  onClick={() => handleSelect('stats')}
+                >
+                  <div className="mock-rn-comp-content">
+                    {/* Left Icon with Live Pulse */}
+                    <div className="mock-rn-comp-icon-box">
+                      <span className="mock-rn-comp-emoji">🏆</span>
+                      <span className="mock-rn-live-pulse-ring"></span>
+                    </div>
+
+                    {/* Center Details */}
+                    <div className="mock-rn-comp-details">
+                      <div className="mock-rn-status-badge">
+                        <span className="mock-rn-status-text">LIVE NOW</span>
+                        <span className="mock-rn-live-dot"></span>
+                      </div>
+                      <span className="mock-rn-comp-program">Natural Science Freshman</span>
+                      <h5 className="mock-rn-comp-title">Freshman Calculus Showdown</h5>
+                      <div className="mock-rn-comp-time">
+                        <Clock size={11} color="rgba(255,255,255,0.9)" />
+                        <span>1h 24m left</span>
+                      </div>
+                    </div>
+
+                    {/* Right Arrow */}
+                    <ChevronRight size={18} color="rgba(255,255,255,0.8)" />
                   </div>
-                  <div className="mock-card-info">
-                    <div className="mock-card-title" style={{ color: '#1E3A8A' }}>Daily Quiz Challenge</div>
-                    <div className="mock-card-meta" style={{ color: '#3B82F6' }}>10 Questions • Logic & Thinking</div>
+
+                  {/* Join Button */}
+                  <div className="mock-rn-comp-action">
+                    <span>Join Competition</span>
+                    <ArrowRight size={12} color="#DC2626" />
                   </div>
-                  <ChevronRight size={16} color="#3B82F6" />
                 </div>
 
-                {/* Freshman Subjects Grid */}
-                <div className="mock-section-title" style={{ marginTop: '4px' }}>
-                  <span>Freshman Courses</span>
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <div style={{ background: '#FAF5FF', border: '1px solid #E9D5FF', borderRadius: '10px', padding: '8px' }}>
-                    <div style={{ fontSize: '18px' }}>🧠</div>
-                    <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#581C87' }}>Logic & Critical</div>
-                    <div style={{ fontSize: '9px', color: '#7E22CE' }}>5 Modules</div>
+                {/* 3. Programs Section (Exact programsSection & ProgramCard.jsx) */}
+                <div className="mock-programs-section">
+                  <div className="mock-programs-header">
+                    <div className="mock-programs-header-left">
+                      <div className="mock-programs-indicator"></div>
+                      <h4 className="mock-programs-title">All Programs</h4>
+                    </div>
+                    <span 
+                      className="mock-programs-see-all"
+                      onClick={() => handleSelect('courses')}
+                    >
+                      Browse
+                    </span>
                   </div>
-                  <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: '10px', padding: '8px' }}>
-                    <div style={{ fontSize: '18px' }}>🧪</div>
-                    <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#14532D' }}>General Chemistry</div>
-                    <div style={{ fontSize: '9px', color: '#15803D' }}>4 Modules</div>
+
+                  <div className="mock-programs-list">
+                    {/* Program 1: Natural Science Freshman (Active) */}
+                    <div 
+                      className="mock-program-card"
+                      onClick={() => handleSelect('courses')}
+                    >
+                      <div className="mock-card-accent-bar" style={{ background: '#22C55E' }}></div>
+                      <div className="mock-program-card-inner">
+                        <div className="mock-program-thumb" style={{ background: 'linear-gradient(135deg, #16A34A, #22C55E)' }}>
+                          <GraduationCap size={24} color="#FFFFFF" />
+                        </div>
+                        <div className="mock-program-info">
+                          <h5 className="mock-program-name">Natural Science Freshman</h5>
+                          <div className="mock-program-footer">
+                            <span className="mock-program-badge" style={{ background: 'linear-gradient(135deg, #16A34A, #22C55E)' }}>
+                              <CheckCircle2 size={11} color="#FFFFFF" />
+                              <span>Active</span>
+                            </span>
+                            <div className="mock-program-arrow" style={{ borderColor: '#22C55E', color: '#22C55E' }}>
+                              <ArrowRight size={13} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Program 2: Social Science Freshman (Free) */}
+                    <div 
+                      className="mock-program-card"
+                      onClick={() => handleSelect('courses')}
+                    >
+                      <div className="mock-card-accent-bar" style={{ background: '#7C3AED' }}></div>
+                      <div className="mock-program-card-inner">
+                        <div className="mock-program-thumb" style={{ background: 'linear-gradient(135deg, #7C3AED, #8B5CF6)' }}>
+                          <BookOpen size={24} color="#FFFFFF" />
+                        </div>
+                        <div className="mock-program-info">
+                          <h5 className="mock-program-name">Social Science Freshman</h5>
+                          <div className="mock-program-footer">
+                            <span className="mock-program-badge" style={{ background: 'linear-gradient(135deg, #7C3AED, #8B5CF6)' }}>
+                              <BookOpen size={11} color="#FFFFFF" />
+                              <span>Free</span>
+                            </span>
+                            <div className="mock-program-arrow" style={{ borderColor: '#7C3AED', color: '#7C3AED' }}>
+                              <ArrowRight size={13} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Program 3: Remedial Program (Coming Soon) */}
+                    <div className="mock-program-card">
+                      <div className="mock-card-accent-bar" style={{ background: '#F97316' }}></div>
+                      <div className="mock-program-card-inner">
+                        <div className="mock-program-thumb" style={{ background: 'linear-gradient(135deg, #F97316, #EA580C)' }}>
+                          <Clock size={24} color="#FFFFFF" />
+                        </div>
+                        <div className="mock-program-info">
+                          <h5 className="mock-program-name">Remedial Program (Freshman Prep)</h5>
+                          <div className="mock-program-footer">
+                            <span className="mock-program-badge" style={{ background: 'linear-gradient(135deg, #F97316, #EA580C)' }}>
+                              <Clock size={11} color="#FFFFFF" />
+                              <span>Coming Soon</span>
+                            </span>
+                            <div className="mock-program-arrow" style={{ borderColor: '#F97316', color: '#F97316' }}>
+                              <ArrowRight size={13} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           )}
 
-          {/* SCREEN: COURSES */}
+          {/* ============================================================
+              SCREEN 2: COURSES LIST (Exact CoursesList.screen.jsx)
+              ============================================================ */}
           {currentMode === 'courses' && (
-            <>
-              <div style={{ background: '#7C3AED', padding: '16px 14px', color: 'white' }}>
-                <h4 style={{ fontSize: '15px', fontWeight: 'bold' }}>All Freshman Courses</h4>
-                <p style={{ fontSize: '10px', opacity: 0.9 }}>Semester 1 & 2 Curriculums</p>
-              </div>
-              <div className="mock-app-body">
-                {[
-                  { name: 'Logic and Critical Thinking', code: 'PHIL 101', modules: '5 Chapters', icon: '🧠', color: '#7C3AED' },
-                  { name: 'General Physics Mechanics', code: 'PHYS 101', modules: '6 Chapters', icon: '⚛️', color: '#2563EB' },
-                  { name: 'Communicative English Skill', code: 'ENGL 101', modules: '4 Chapters', icon: '📖', color: '#D97706' },
-                  { name: 'General Psychology', code: 'PSYC 101', modules: '5 Chapters', icon: '🌱', color: '#059669' },
-                  { name: 'Geography of Ethiopia & Horn', code: 'GEOG 101', modules: '4 Chapters', icon: '🌍', color: '#0284C7' },
-                ].map((c, i) => (
-                  <div key={i} className="mock-card">
-                    <div className="mock-card-icon" style={{ background: c.color }}>
-                      {c.icon}
-                    </div>
-                    <div className="mock-card-info">
-                      <div className="mock-card-title">{c.name}</div>
-                      <div className="mock-card-meta">{c.code} • {c.modules}</div>
-                    </div>
-                    <DownloadCloud size={14} color="#94A3B8" />
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-
-          {/* SCREEN: PRACTICE MODE */}
-          {currentMode === 'practice' && (
-            <>
-              <div style={{ background: '#2563EB', padding: '14px', color: 'white' }}>
-                <div style={{ fontSize: '10px', opacity: 0.9 }}>PRACTICE MODE (UNTIMED)</div>
-                <h4 style={{ fontSize: '13px', fontWeight: 'bold' }}>Logic & Philosophy</h4>
-              </div>
-              <div className="mock-app-body">
-                <div style={{ background: 'white', padding: '12px', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
-                  <span style={{ fontSize: '10px', fontWeight: 'bold', color: '#2563EB' }}>Question 4 of 20</span>
-                  <p style={{ fontSize: '12px', fontWeight: '600', color: '#0F172A', marginTop: '6px' }}>
-                    Which branch of philosophy investigates the fundamental nature of reality and existence?
-                  </p>
+            <div className="mock-screen-content">
+              {/* Courses Hero Banner */}
+              <div className="mock-courses-hero">
+                <div className="mock-courses-hero-badge">
+                  <GraduationCap size={24} color="#3B82F6" />
                 </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  <div style={{ padding: '8px 12px', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '11px' }}>
-                    A) Epistemology
+                <h4 className="mock-courses-hero-title">My Courses</h4>
+                <div className="mock-courses-hero-stats">
+                  <div className="mock-hero-stat">
+                    <BookOpen size={13} color="#94A3B8" />
+                    <span>6 Courses</span>
                   </div>
-                  <div style={{ padding: '8px 12px', background: '#ECFDF5', border: '1.5px solid #10B981', borderRadius: '8px', fontSize: '11px', color: '#065F46', fontWeight: '600', display: 'flex', justifyContent: 'space-between' }}>
-                    <span>B) Metaphysics</span>
-                    <CheckCircle2 size={14} color="#10B981" />
-                  </div>
-                  <div style={{ padding: '8px 12px', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '11px' }}>
-                    C) Axiology
-                  </div>
-                  <div style={{ padding: '8px 12px', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '11px' }}>
-                    D) Ethics
+                  <span className="mock-hero-divider">•</span>
+                  <div className="mock-hero-stat">
+                    <span>42 Chapters</span>
                   </div>
                 </div>
-
-                {/* Instant Explanation Box */}
-                <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: '10px', padding: '10px' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 'bold', color: '#166534', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Sparkles size={12} />
-                    <span>Instant Explanation</span>
-                  </div>
-                  <p style={{ fontSize: '10px', color: '#14532D', marginTop: '4px', lineHeight: '1.4' }}>
-                    Metaphysics is the philosophical branch focused on the nature of being, reality, and ultimate origins.
-                  </p>
-                </div>
               </div>
-            </>
-          )}
 
-          {/* SCREEN: EXAM SIMULATION */}
-          {currentMode === 'exam' && (
-            <>
-              <div style={{ background: '#DC2626', padding: '14px', color: 'white' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '10px', fontWeight: 'bold' }}>MIDTERM SIMULATION</span>
-                  <span style={{ fontSize: '11px', background: 'rgba(0,0,0,0.3)', padding: '2px 8px', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Clock size={12} /> 48:22
-                  </span>
-                </div>
-                <h4 style={{ fontSize: '13px', fontWeight: 'bold', marginTop: '2px' }}>General Physics Exam</h4>
-              </div>
-              <div className="mock-app-body">
-                <div style={{ background: 'white', padding: '12px', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', fontWeight: 'bold', color: '#DC2626' }}>Question 14 of 50</span>
-                    <span style={{ fontSize: '10px', color: '#F59E0B' }}>🚩 Flagged for review</span>
+              <div className="mock-rn-scroll-body">
+                {/* Section Header */}
+                <div className="mock-courses-section-header">
+                  <div className="mock-programs-header-left">
+                    <div className="mock-programs-indicator"></div>
+                    <span className="mock-courses-sec-title">All Courses</span>
                   </div>
-                  <p style={{ fontSize: '12px', fontWeight: '600', color: '#0F172A', marginTop: '6px' }}>
-                    An object accelerates uniformly from 10 m/s to 30 m/s over 5 seconds. What is the displacement?
-                  </p>
+                  <span className="mock-courses-count-badge">6</span>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  {['A) 75 meters', 'B) 100 meters', 'C) 125 meters', 'D) 150 meters'].map((opt, i) => (
+                {/* Courses Cards List */}
+                <div className="mock-courses-list">
+                  {[
+                    { 
+                      index: '01', 
+                      title: 'General Physics (Mechanics & Heat)', 
+                      grad: ['#3B82F6', '#1D4ED8'], 
+                      icon: '⚛️', 
+                      status: 'ENROLLED' 
+                    },
+                    { 
+                      index: '02', 
+                      title: 'Logic and Critical Thinking', 
+                      grad: ['#8B5CF6', '#6D28D9'], 
+                      icon: '🧠', 
+                      status: 'ENROLLED' 
+                    },
+                    { 
+                      index: '03', 
+                      title: 'Communicative English Skills I', 
+                      grad: ['#10B981', '#059669'], 
+                      icon: '📖', 
+                      status: 'ENROLLED' 
+                    },
+                    { 
+                      index: '04', 
+                      title: 'Mathematics for Natural Science', 
+                      grad: ['#06B6D4', '#0891B2'], 
+                      icon: '📐', 
+                      status: 'ENROLLED' 
+                    },
+                    { 
+                      index: '05', 
+                      title: 'General Chemistry (Atoms & Bonding)', 
+                      grad: ['#F59E0B', '#D97706'], 
+                      icon: '🧪', 
+                      status: 'PREMIUM' 
+                    },
+                  ].map((c, i) => (
                     <div 
                       key={i} 
-                      style={{ 
-                        padding: '8px 12px', 
-                        background: i === 1 ? '#EFF6FF' : '#F8FAFC', 
-                        border: i === 1 ? '1.5px solid #3B82F6' : '1px solid #E2E8F0', 
-                        borderRadius: '8px', 
-                        fontSize: '11px',
-                        color: i === 1 ? '#1D4ED8' : '#334155',
-                        fontWeight: i === 1 ? '600' : 'normal'
-                      }}
+                      className="mock-course-rn-card"
+                      onClick={() => handleSelect('practice')}
                     >
-                      {opt}
+                      <div 
+                        className="mock-course-rn-icon"
+                        style={{ background: `linear-gradient(135deg, ${c.grad[0]}, ${c.grad[1]})` }}
+                      >
+                        <span style={{ fontSize: '15px' }}>{c.icon}</span>
+                      </div>
+                      <div className="mock-course-rn-info">
+                        <span className="mock-course-rn-index">COURSE {c.index}</span>
+                        <h5 className="mock-course-rn-title">{c.title}</h5>
+                        <div className="mock-course-rn-badge-row">
+                          {c.status === 'ENROLLED' ? (
+                            <span className="mock-badge-enrolled">
+                              <Star size={10} color="#10B981" fill="#10B981" />
+                              <span>ENROLLED</span>
+                            </span>
+                          ) : (
+                            <span className="mock-badge-premium">
+                              <Lock size={10} color="#F59E0B" />
+                              <span>PREMIUM</span>
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <div className="mock-course-rn-arrow">
+                        <ChevronRight size={14} color="#94A3B8" />
+                      </div>
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          )}
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px' }}>
-                  <button style={{ padding: '6px 14px', background: '#E2E8F0', borderRadius: '6px', fontSize: '10px', fontWeight: 'bold', color: '#475569' }}>
-                    Previous
+          {/* ============================================================
+              SCREEN 3: MODE SELECTION (Exact ModeSelection.screen.jsx)
+              ============================================================ */}
+          {currentMode === 'practice' && (
+            <div className="mock-screen-content">
+              {/* Header */}
+              <div className="mock-mode-header">
+                <button 
+                  className="mock-mode-back"
+                  onClick={() => handleSelect('courses')}
+                >
+                  <ChevronLeft size={18} color="#FFFFFF" />
+                </button>
+                <div className="mock-mode-header-center">
+                  <span className="mock-mode-sub">CHOOSE YOUR MODE</span>
+                  <h4 className="mock-mode-title">General Physics: Kinematics</h4>
+                </div>
+                <div style={{ width: '28px' }}></div>
+              </div>
+
+              <div className="mock-rn-scroll-body">
+                <p className="mock-mode-instruction">Select how you'd like to practice:</p>
+
+                {/* Practice Mode Card (Emerald Green) */}
+                <div 
+                  className="mock-mode-card"
+                  onClick={() => handleSelect('questions')}
+                >
+                  <div className="mock-mode-card-top">
+                    <div className="mock-mode-icon" style={{ background: 'linear-gradient(135deg, #10B981, #059669)' }}>
+                      <GraduationCap size={24} color="#FFFFFF" />
+                    </div>
+                    <div className="mock-mode-title-col">
+                      <div className="mock-mode-title-row">
+                        <h4 className="mock-mode-name">Practice Mode</h4>
+                        <ChevronRight size={18} color="#94A3B8" />
+                      </div>
+                      <p className="mock-mode-desc">
+                        Learn with immediate feedback and step-by-step explanations after each question
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mock-mode-bullets">
+                    <div className="mock-mode-bullet">
+                      <CheckCircle2 size={13} color="#10B981" />
+                      <span>Instant feedback</span>
+                    </div>
+                    <div className="mock-mode-bullet">
+                      <Lightbulb size={13} color="#10B981" />
+                      <span>Explanations shown</span>
+                    </div>
+                    <div className="mock-mode-bullet">
+                      <span style={{ fontSize: '13px', lineHeight: 1, color: '#10B981' }}>♾️</span>
+                      <span>No time limit</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Exam Mode Card (Amber / Red) */}
+                <div 
+                  className="mock-mode-card"
+                  onClick={() => handleSelect('exam')}
+                >
+                  <div className="mock-mode-card-top">
+                    <div className="mock-mode-icon" style={{ background: 'linear-gradient(135deg, #F59E0B, #D97706)' }}>
+                      <Clock size={24} color="#FFFFFF" />
+                    </div>
+                    <div className="mock-mode-title-col">
+                      <div className="mock-mode-title-row">
+                        <h4 className="mock-mode-name">Exam Mode</h4>
+                        <ChevronRight size={18} color="#94A3B8" />
+                      </div>
+                      <p className="mock-mode-desc">
+                        Test yourself under timed test conditions without immediate feedback
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mock-mode-bullets">
+                    <div className="mock-mode-bullet">
+                      <Clock size={13} color="#F59E0B" />
+                      <span>45 min timer</span>
+                    </div>
+                    <div className="mock-mode-bullet">
+                      <span style={{ fontSize: '13px', lineHeight: 1, color: '#F59E0B' }}>👁️‍🗨️</span>
+                      <span>No immediate feedback</span>
+                    </div>
+                    <div className="mock-mode-bullet">
+                      <Trophy size={13} color="#F59E0B" />
+                      <span>Results at end</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Info Note */}
+                <div className="mock-mode-info-box">
+                  <span style={{ fontSize: '15px' }}>💡</span>
+                  <p>Both modes use the same curriculum questions. Choose based on your study session goal!</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ============================================================
+              SCREEN 4: QUESTION PRACTICE (Exact QuestionPractice.screen.jsx)
+              ============================================================ */}
+          {currentMode === 'questions' && (
+            <div className="mock-screen-content">
+              {/* Header */}
+              <div className="mock-qp-header">
+                <button 
+                  className="mock-mode-back"
+                  onClick={() => handleSelect('practice')}
+                >
+                  <ChevronLeft size={18} color="#FFFFFF" />
+                </button>
+                <div className="mock-mode-header-center">
+                  <span className="mock-qp-sub">PRACTICE MODE</span>
+                  <h4 className="mock-mode-title">General Physics</h4>
+                </div>
+                <div style={{ width: '28px' }}></div>
+              </div>
+
+              <div className="mock-rn-scroll-body">
+                {/* Question Card */}
+                <div className="mock-qp-card">
+                  <div className="mock-qp-num">Question 3 of 15</div>
+                  <p className="mock-qp-text">
+                    A car accelerates uniformly from 10 m/s to 30 m/s in 5.0 seconds. What is the total displacement traveled?
+                  </p>
+                  <div className="mock-qp-formula">
+                    s = ((v₀ + v) / 2) · t
+                  </div>
+
+                  {/* Options */}
+                  <div className="mock-qp-options">
+                    <div className="mock-qp-option">
+                      <span className="mock-qp-bullet">A</span>
+                      <span className="mock-qp-opt-text">75 meters</span>
+                    </div>
+
+                    {/* Selected and Correct Option B */}
+                    <div className="mock-qp-option mock-qp-option-correct">
+                      <span className="mock-qp-bullet mock-bullet-correct">B</span>
+                      <span className="mock-qp-opt-text" style={{ color: '#F0FDF4', fontWeight: 600 }}>100 meters</span>
+                      <CheckCircle2 size={16} color="#10B981" />
+                    </div>
+
+                    <div className="mock-qp-option">
+                      <span className="mock-qp-bullet">C</span>
+                      <span className="mock-qp-opt-text">125 meters</span>
+                    </div>
+
+                    <div className="mock-qp-option">
+                      <span className="mock-qp-bullet">D</span>
+                      <span className="mock-qp-opt-text">150 meters</span>
+                    </div>
+                  </div>
+
+                  {/* Feedback Message */}
+                  <div className="mock-qp-feedback">
+                    <CheckCircle2 size={15} color="#10B981" />
+                    <span>Great job! That's the correct answer.</span>
+                  </div>
+                </div>
+
+                {/* Step-by-Step Explanation Card */}
+                <div className="mock-qp-explanation">
+                  <div className="mock-expl-header">
+                    <div className="mock-expl-icon-badge">
+                      <Lightbulb size={13} color="#F59E0B" />
+                    </div>
+                    <span className="mock-expl-title">Explanation</span>
+                  </div>
+                  <p className="mock-expl-body">
+                    Average velocity v_avg = (10 + 30) / 2 = 20 m/s.
+                    Total displacement s = v_avg × t = 20 m/s × 5.0 s = 100 meters.
+                  </p>
+                </div>
+
+                {/* Bottom Navigation */}
+                <div className="mock-qp-bottom-nav">
+                  <button className="mock-qp-nav-btn">
+                    <ChevronLeft size={14} /> Previous
                   </button>
-                  <button style={{ padding: '6px 14px', background: '#DC2626', color: 'white', borderRadius: '6px', fontSize: '10px', fontWeight: 'bold' }}>
-                    Next Question →
+                  <span className="mock-qp-counter">3/15</span>
+                  <button className="mock-qp-nav-btn mock-qp-nav-active">
+                    Next <ChevronRight size={14} />
                   </button>
                 </div>
               </div>
-            </>
+            </div>
           )}
 
-          {/* Bottom App Navigation Bar (Faithfully matches MainTabs.jsx) */}
-          <div className="mock-bottom-bar" style={{ marginTop: 'auto' }}>
+          {/* ============================================================
+              SCREEN 5: EXAM SIMULATION (ExamMode.screen.jsx)
+              ============================================================ */}
+          {currentMode === 'exam' && (
+            <div className="mock-screen-content">
+              <div className="mock-exam-header">
+                <button 
+                  className="mock-mode-back"
+                  onClick={() => handleSelect('practice')}
+                >
+                  <ChevronLeft size={18} color="#FFFFFF" />
+                </button>
+                <div className="mock-mode-header-center">
+                  <span className="mock-exam-tag">TIMED EXAM SIMULATION</span>
+                  <h4 className="mock-mode-title">Physics Midterm</h4>
+                </div>
+                <div className="mock-exam-timer-pill">
+                  <Clock size={11} /> 43:18
+                </div>
+              </div>
+
+              <div className="mock-rn-scroll-body">
+                {/* Exam Progress Bubbles */}
+                <div className="mock-exam-bubbles">
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                    <span 
+                      key={n} 
+                      className={`mock-bubble ${n === 3 ? 'mock-bubble-active' : n < 3 ? 'mock-bubble-done' : ''}`}
+                    >
+                      {n}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mock-qp-card">
+                  <div className="mock-exam-meta-row">
+                    <span className="mock-exam-qnum">Question 3 of 45</span>
+                    <span className="mock-exam-flag">🚩 Flag Question</span>
+                  </div>
+                  <p className="mock-qp-text">
+                    Which of Newton's laws describes the relationship between force, mass, and acceleration?
+                  </p>
+
+                  <div className="mock-qp-options">
+                    {['First Law of Motion', 'Second Law of Motion (Selected)', 'Third Law of Motion', 'Law of Universal Gravitation'].map((opt, i) => (
+                      <div 
+                        key={i} 
+                        className={`mock-qp-option ${i === 1 ? 'mock-option-selected' : ''}`}
+                      >
+                        <span className="mock-qp-bullet">{String.fromCharCode(65 + i)}</span>
+                        <span className="mock-qp-opt-text">{opt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mock-qp-bottom-nav">
+                  <button className="mock-qp-nav-btn">
+                    <ChevronLeft size={14} /> Previous
+                  </button>
+                  <button className="mock-qp-nav-btn mock-qp-nav-active">
+                    Next <ChevronRight size={14} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ============================================================
+              SCREEN 6: STATS & COMPETITIONS (Exact StatsNavigator.jsx / WeeklyLeaderboard)
+              ============================================================ */}
+          {currentMode === 'stats' && (
+            <div className="mock-screen-content">
+              {/* Segmented Tab Header (Exact StatsNavigator tabs: Competitions, Progress, Weekly) */}
+              <div className="mock-stats-tabs-header">
+                <div className="mock-stats-seg-btn">
+                  <Radio size={13} color="#6B7280" />
+                  <span>Competitions</span>
+                </div>
+                <div className="mock-stats-seg-btn">
+                  <BarChart2 size={13} color="#6B7280" />
+                  <span>Progress</span>
+                </div>
+                <div className="mock-stats-seg-btn mock-stats-seg-active">
+                  <Trophy size={13} color="#FFFFFF" />
+                  <span>Weekly</span>
+                </div>
+              </div>
+
+              <div className="mock-rn-scroll-body">
+                {/* Leaderboard Trophy Card */}
+                <div className="mock-leaderboard-hero">
+                  <div className="mock-trophy-circle">
+                    <Trophy size={30} color="#F59E0B" />
+                  </div>
+                  <h4 className="mock-leaderboard-title">Weekly Leaderboard</h4>
+                  <span className="mock-leaderboard-date">Oct 12 - Oct 19 • Freshman Showdown</span>
+                  <div className="mock-leaderboard-tag">
+                    <span>Based on lessons, quizzes & speed</span>
+                  </div>
+                </div>
+
+                {/* User's Performance Card */}
+                <div className="mock-your-rank-card">
+                  <div className="mock-your-rank-header">
+                    <User size={15} color="#3B82F6" />
+                    <span>Your Performance</span>
+                  </div>
+                  <div className="mock-your-rank-row">
+                    <div className="mock-your-rank-badge">
+                      <span>#14</span>
+                    </div>
+                    <div className="mock-your-rank-stats">
+                      <div className="mock-yr-stat">
+                        <span className="mock-yr-val">480 XP</span>
+                        <span className="mock-yr-sub">Total Points</span>
+                      </div>
+                      <div className="mock-yr-stat">
+                        <span className="mock-yr-val" style={{ color: '#10B981' }}>88%</span>
+                        <span className="mock-yr-sub">Accuracy</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Leaderboard Table List */}
+                <div className="mock-leaderboard-list">
+                  <span className="mock-lb-header-label">Top Ethiopian Freshman Students</span>
+                  {[
+                    { rank: 1, medal: '🥇', name: 'Natnael D.', uni: 'Addis Ababa University (AAU)', xp: '1,420 XP' },
+                    { rank: 2, medal: '🥈', name: 'Selamawit T.', uni: 'Adama Science & Tech (ASTU)', xp: '1,280 XP' },
+                    { rank: 3, medal: '🥉', name: 'Bereket M.', uni: 'Hawassa University', xp: '1,150 XP' },
+                    { rank: 4, medal: '4', name: 'Yonas K.', uni: 'Jimma University', xp: '980 XP' },
+                    { rank: 5, medal: '5', name: 'Almaz B.', uni: 'Bahir Dar University', xp: '910 XP' },
+                  ].map((row) => (
+                    <div key={row.rank} className="mock-lb-row">
+                      <span className="mock-lb-rank">{row.medal}</span>
+                      <div className="mock-lb-info">
+                        <span className="mock-lb-name">{row.name}</span>
+                        <span className="mock-lb-uni">{row.uni}</span>
+                      </div>
+                      <span className="mock-lb-xp">{row.xp}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ============================================================
+              SCREEN 7: OFFLINE DOWNLOADS (Exact DownloadManager.screen.jsx)
+              ============================================================ */}
+          {currentMode === 'downloads' && (
+            <div className="mock-screen-content">
+              {/* Header */}
+              <div className="mock-downloads-header">
+                <div className="mock-dl-shield">
+                  <ShieldCheck size={14} color="#34D399" />
+                  <span>SQLITE OFFLINE ENGINE</span>
+                </div>
+                <h4 className="mock-mode-title">Offline Downloads</h4>
+              </div>
+
+              <div className="mock-rn-scroll-body">
+                {/* Storage Summary Bar */}
+                <div className="mock-storage-card">
+                  <div className="mock-storage-info">
+                    <span>Device SQLite Storage</span>
+                    <span className="mock-storage-amt">412 MB / 1.2 GB Cached</span>
+                  </div>
+                  <div className="mock-storage-bar">
+                    <div className="mock-storage-fill" style={{ width: '38%' }}></div>
+                  </div>
+                </div>
+
+                <div className="mock-courses-section-header" style={{ marginTop: '4px' }}>
+                  <span className="mock-courses-sec-title">Downloaded Videos (3)</span>
+                </div>
+
+                <div className="mock-courses-list">
+                  {[
+                    { title: 'Physics: Kinematics & 1D Motion', size: '142 MB • 45m Lecture', icon: '▶️' },
+                    { title: 'Logic: Formal & Informal Fallacies', size: '98 MB • 32m Lecture', icon: '▶️' },
+                    { title: 'Calculus: Limits & Continuity Solutions', size: '172 MB • 54m Lecture', icon: '▶️' },
+                  ].map((item, idx) => (
+                    <div key={idx} className="mock-download-card">
+                      <div className="mock-download-icon">
+                        {item.icon}
+                      </div>
+                      <div className="mock-download-info">
+                        <h5 className="mock-download-title">{item.title}</h5>
+                        <span className="mock-download-meta">{item.size}</span>
+                      </div>
+                      <span className="mock-badge-offline">Offline</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ============================================================
+              BOTTOM TAB BAR (Exact replica of MainTabs.jsx)
+              Curved top edge, background gradient ['#161D2A', '#0F1624'],
+              active tab with blue gradient ['#3B82F6', '#1D4ED8'] container
+              ============================================================ */}
+          <div className="mock-maintabs-bar">
+            {/* Tab 1: Home */}
             <div 
-              className={`mock-tab-item ${currentMode === 'dashboard' ? 'active' : ''}`}
+              className={`mock-maintab-item ${currentMode === 'dashboard' ? 'active' : ''}`}
               onClick={() => handleSelect('dashboard')}
-              style={{ cursor: 'pointer' }}
             >
-              <Home size={15} />
-              <span>Home</span>
+              <div className={`mock-maintab-icon-wrap ${currentMode === 'dashboard' ? 'active-gradient' : ''}`}>
+                <Home size={18} color={currentMode === 'dashboard' ? '#FFFFFF' : '#94A3B8'} />
+              </div>
+              <span className="mock-maintab-label">Home</span>
             </div>
+
+            {/* Tab 2: Courses */}
             <div 
-              className={`mock-tab-item ${currentMode === 'courses' ? 'active' : ''}`}
+              className={`mock-maintab-item ${currentMode === 'courses' ? 'active' : ''}`}
               onClick={() => handleSelect('courses')}
-              style={{ cursor: 'pointer' }}
             >
-              <BookOpen size={15} />
-              <span>Courses</span>
+              <div className={`mock-maintab-icon-wrap ${currentMode === 'courses' ? 'active-gradient' : ''}`}>
+                <BookOpen size={18} color={currentMode === 'courses' ? '#FFFFFF' : '#94A3B8'} />
+              </div>
+              <span className="mock-maintab-label">Courses</span>
             </div>
+
+            {/* Tab 3: Stats */}
             <div 
-              className={`mock-tab-item ${currentMode === 'practice' ? 'active' : ''}`}
+              className={`mock-maintab-item ${currentMode === 'stats' ? 'active' : ''}`}
+              onClick={() => handleSelect('stats')}
+            >
+              <div className={`mock-maintab-icon-wrap ${currentMode === 'stats' ? 'active-gradient' : ''}`}>
+                <BarChart2 size={18} color={currentMode === 'stats' ? '#FFFFFF' : '#94A3B8'} />
+              </div>
+              <span className="mock-maintab-label">Stats</span>
+            </div>
+
+            {/* Tab 4: Profile / Practice / Downloads */}
+            <div 
+              className={`mock-maintab-item ${currentMode === 'practice' || currentMode === 'questions' || currentMode === 'exam' || currentMode === 'downloads' ? 'active' : ''}`}
               onClick={() => handleSelect('practice')}
-              style={{ cursor: 'pointer' }}
             >
-              <HelpCircle size={15} />
-              <span>Practice</span>
-            </div>
-            <div 
-              className={`mock-tab-item ${currentMode === 'exam' ? 'active' : ''}`}
-              onClick={() => handleSelect('exam')}
-              style={{ cursor: 'pointer' }}
-            >
-              <Clock size={15} />
-              <span>Exams</span>
-            </div>
-            <div className="mock-tab-item">
-              <User size={15} />
-              <span>Profile</span>
+              <div className={`mock-maintab-icon-wrap ${currentMode === 'practice' || currentMode === 'questions' || currentMode === 'exam' || currentMode === 'downloads' ? 'active-gradient' : ''}`}>
+                <User size={18} color={currentMode === 'practice' || currentMode === 'questions' || currentMode === 'exam' || currentMode === 'downloads' ? '#FFFFFF' : '#94A3B8'} />
+              </div>
+              <span className="mock-maintab-label">Profile</span>
             </div>
           </div>
         </div>

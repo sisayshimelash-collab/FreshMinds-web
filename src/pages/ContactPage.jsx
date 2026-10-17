@@ -8,8 +8,9 @@ import {
   HelpCircle,
   ArrowUpRight
 } from 'lucide-react';
-import { YouTubeIcon, LinkedInIcon, TelegramIcon } from '../components/SocialIcons';
+import { YouTubeIcon, LinkedInIcon, TelegramIcon, GooglePlayIcon } from '../components/SocialIcons';
 import { siteConfig } from '../config/siteConfig';
+import SEO from '../components/SEO';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -23,6 +24,13 @@ export default function ContactPage() {
 
   return (
     <div style={{ paddingBottom: '80px' }}>
+      <SEO 
+        title="Contact Us | Support, Feedback & Student Help"
+        description="Get in touch with FreshMinds Academy. Email us at Freshmindssupport@gmail.com or reach out via our official Telegram channel for student questions and academic collaboration."
+        keywords="Contact FreshMinds, FreshMinds support, Freshmindssupport@gmail.com, Ethiopian student help, freshman academic questions"
+        canonicalPath="/contact"
+      />
+
       {/* Header */}
       <section style={{ background: 'var(--grad-hero)', padding: '60px 0 50px', borderBottom: '1px solid var(--border-subtle)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
@@ -40,11 +48,11 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Content Grid */}
-      <section className="section">
+      <section className="section" style={{ padding: 'clamp(40px, 5vw, 64px) 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(28px, 4vw, 48px)' }}>
             {/* Contact Information & Channels */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div>
                 <h3 style={{ fontSize: '22px', fontWeight: 'bold', marginBottom: '8px' }}>Official Channels</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '15px' }}>
@@ -52,73 +60,115 @@ export default function ContactPage() {
                 </p>
               </div>
 
+              {/* Google Play App Card */}
+              <a 
+                href={siteConfig.app.googlePlayUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="feature-card"
+                style={{ padding: '18px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '14px', border: '1px solid #C7D2FE', background: 'linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%)' }}
+              >
+                <img 
+                  src="/app-icon.png" 
+                  alt="FreshMinds Mobile App Icon" 
+                  style={{ width: '46px', height: '46px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.2)', flexShrink: 0 }} 
+                />
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: 'bold', margin: 0 }}>Google Play Store</h4>
+                    <span style={{ fontSize: '11px', fontWeight: 'bold', background: '#DCFCE7', color: '#16A34A', padding: '2px 8px', borderRadius: '999px' }}>Live</span>
+                  </div>
+                  <p style={{ fontSize: '13px', color: '#64748B', margin: '3px 0 0' }}>Download FreshMinds Mobile App</p>
+                </div>
+                <ArrowUpRight size={18} color="#7C3AED" style={{ flexShrink: 0 }} />
+              </a>
+
               {/* Telegram Card */}
               <a 
                 href={siteConfig.socials.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="feature-card"
-                style={{ padding: '20px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}
+                style={{ padding: '18px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '14px' }}
               >
-                <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#E0F2FE', color: '#0284C7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '46px', height: '46px', borderRadius: '14px', background: '#E0F2FE', color: '#0284C7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Send size={22} />
                 </div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: '16px', fontWeight: 'bold' }}>Telegram Community & Support</h4>
-                  <p style={{ fontSize: '13px', color: '#64748B' }}>{siteConfig.community.telegramHandle}</p>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: 'bold', margin: 0 }}>Telegram Community</h4>
+                    <span style={{ fontSize: '11px', fontWeight: 'bold', background: '#E0F2FE', color: '#0369A1', padding: '2px 8px', borderRadius: '999px' }}>{siteConfig.community.memberCount}</span>
+                  </div>
+                  <p style={{ fontSize: '13px', color: '#64748B', margin: '3px 0 0' }}>{siteConfig.community.telegramHandle}</p>
                 </div>
-                <ArrowUpRight size={18} color="#94A3B8" />
+                <ArrowUpRight size={18} color="#94A3B8" style={{ flexShrink: 0 }} />
               </a>
 
-              {/* Email Card */}
-              <div 
+              {/* YouTube Card */}
+              <a 
+                href={siteConfig.socials.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="feature-card"
-                style={{ padding: '20px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}
+                style={{ padding: '18px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '14px' }}
               >
-                <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#EDE9FE', color: '#7C3AED', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '46px', height: '46px', borderRadius: '14px', background: '#FEE2E2', color: '#DC2626', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <YouTubeIcon size={24} color="#DC2626" />
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: 'bold', margin: 0 }}>YouTube Academy</h4>
+                    <span style={{ fontSize: '11px', fontWeight: 'bold', background: '#FEE2E2', color: '#B91C1C', padding: '2px 8px', borderRadius: '999px' }}>{siteConfig.community.youtubeSubscriberCount}</span>
+                  </div>
+                  <p style={{ fontSize: '13px', color: '#64748B', margin: '3px 0 0' }}>@FreshMindsAcademy-c8x</p>
+                </div>
+                <ArrowUpRight size={18} color="#94A3B8" style={{ flexShrink: 0 }} />
+              </a>
+
+              {/* Official Support Email Card (Clickable mailto for Mobile) */}
+              <a 
+                href={`mailto:${siteConfig.contact.email}`}
+                className="feature-card"
+                style={{ padding: '18px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '14px', border: '1px solid #DDD6FE' }}
+              >
+                <div style={{ width: '46px', height: '46px', borderRadius: '14px', background: '#EDE9FE', color: '#7C3AED', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Mail size={22} />
                 </div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: '16px', fontWeight: 'bold' }}>Official Email</h4>
-                  <p style={{ fontSize: '13px', color: '#64748B' }}>{siteConfig.contact.email}</p>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <h4 style={{ fontSize: '15px', fontWeight: 'bold', margin: 0 }}>Support Email</h4>
+                    <span style={{ fontSize: '11px', fontWeight: 'bold', background: '#EDE9FE', color: '#7C3AED', padding: '2px 8px', borderRadius: '999px' }}>Tap to Email</span>
+                  </div>
+                  <p style={{ fontSize: '13px', color: '#7C3AED', fontWeight: '600', margin: '3px 0 0', wordBreak: 'break-all' }}>{siteConfig.contact.email}</p>
                 </div>
-              </div>
+                <ArrowUpRight size={18} color="#7C3AED" style={{ flexShrink: 0 }} />
+              </a>
 
               {/* Location Card */}
               <div 
                 className="feature-card"
-                style={{ padding: '20px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}
+                style={{ padding: '18px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '14px' }}
               >
-                <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#DCFCE7', color: '#16A34A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '46px', height: '46px', borderRadius: '14px', background: '#DCFCE7', color: '#16A34A', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <MapPin size={22} />
                 </div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: '16px', fontWeight: 'bold' }}>Headquarters</h4>
-                  <p style={{ fontSize: '13px', color: '#64748B' }}>{siteConfig.contact.location}</p>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <h4 style={{ fontSize: '15px', fontWeight: 'bold', margin: 0 }}>Headquarters</h4>
+                  <p style={{ fontSize: '13px', color: '#64748B', margin: '3px 0 0' }}>{siteConfig.contact.location}</p>
                 </div>
               </div>
 
               {/* Socials Row */}
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a 
-                  href={siteConfig.socials.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                  style={{ flex: 1 }}
-                >
-                  <YouTubeIcon size={16} color="#DC2626" />
-                  <span>YouTube</span>
-                </a>
-                <a 
                   href={siteConfig.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary"
-                  style={{ flex: 1 }}
+                  style={{ width: '100%', justifyContent: 'center' }}
                 >
                   <LinkedInIcon size={16} color="#0A66C2" />
-                  <span>LinkedIn</span>
+                  <span>Connect on LinkedIn</span>
                 </a>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Smartphone, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { GooglePlayIcon } from './SocialIcons';
 import { siteConfig } from '../config/siteConfig';
 
 export default function Navbar() {
@@ -15,7 +16,7 @@ export default function Navbar() {
         {/* Brand Logo & Name */}
         <Link to="/" className="nav-brand" onClick={closeMenu}>
           <div className="nav-brand-logo">
-            <GraduationCap size={22} />
+            <img src="/app-icon.png" alt="FreshMinds Academy" className="nav-brand-img" />
           </div>
           <div className="nav-brand-text">
             <span className="nav-brand-name">{siteConfig.name}</span>
@@ -41,10 +42,15 @@ export default function Navbar() {
 
         {/* Action Button */}
         <div className="nav-actions">
-          <Link to="/app" className="btn btn-primary btn-sm">
-            <Smartphone size={16} />
-            <span>Get the App</span>
-          </Link>
+          <a 
+            href={siteConfig.app.googlePlayUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-primary btn-sm nav-cta-btn"
+          >
+            <GooglePlayIcon size={16} />
+            <span>Get on Play Store</span>
+          </a>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -69,16 +75,18 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
-        <div style={{ marginTop: '16px' }}>
-          <Link
-            to="/app"
+        <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <a
+            href={siteConfig.app.googlePlayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary btn-lg"
-            style={{ width: '100%' }}
+            style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '10px' }}
             onClick={closeMenu}
           >
-            <Smartphone size={18} />
-            <span>Get the App</span>
-          </Link>
+            <GooglePlayIcon size={20} />
+            <span>Download on Google Play</span>
+          </a>
         </div>
       </div>
     </header>

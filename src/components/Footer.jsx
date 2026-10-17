@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, ArrowUpRight } from 'lucide-react';
-import { TelegramIcon, YouTubeIcon, LinkedInIcon } from './SocialIcons';
+import { ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { TelegramIcon, YouTubeIcon, LinkedInIcon, GooglePlayIcon } from './SocialIcons';
+import GooglePlayButton from './GooglePlayButton';
 import { siteConfig } from '../config/siteConfig';
 
 export default function Footer() {
@@ -13,20 +14,9 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Brand Column */}
           <div className="footer-brand">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div
-                style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '10px',
-                  background: 'var(--grad-primary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white'
-                }}
-              >
-                <GraduationCap size={20} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div className="footer-brand-logo">
+                <img src="/app-icon.png" alt="FreshMinds Academy" className="footer-brand-img" />
               </div>
               <span className="footer-brand-title">{siteConfig.name}</span>
             </div>
@@ -36,6 +26,10 @@ export default function Footer() {
             <p className="footer-brand-tagline">
               {siteConfig.description}
             </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#38BDF8', fontSize: '12px', fontWeight: 600 }}>
+              <ShieldCheck size={16} />
+              <span>Verified Ethiopian University Learning Companion</span>
+            </div>
           </div>
 
           {/* Explore Links */}
@@ -52,7 +46,7 @@ export default function Footer() {
 
           {/* Connect Column */}
           <div>
-            <h4 className="footer-heading">Connect</h4>
+            <h4 className="footer-heading">Community</h4>
             <ul className="footer-links">
               <li>
                 <a
@@ -61,8 +55,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
                 >
-                  <TelegramIcon size={16} />
-                  <span>Telegram Community</span>
+                  <TelegramIcon size={16} color="#38BDF8" />
+                  <span>Telegram ({siteConfig.community.telegramMembersShort})</span>
                   <ArrowUpRight size={13} style={{ opacity: 0.6 }} />
                 </a>
               </li>
@@ -73,8 +67,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
                 >
-                  <YouTubeIcon size={16} />
-                  <span>YouTube Channel</span>
+                  <YouTubeIcon size={16} color="#EF4444" />
+                  <span>YouTube ({siteConfig.community.youtubeSubscribersShort})</span>
                   <ArrowUpRight size={13} style={{ opacity: 0.6 }} />
                 </a>
               </li>
@@ -85,12 +79,21 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
                 >
-                  <LinkedInIcon size={16} />
+                  <LinkedInIcon size={16} color="#0EA5E9" />
                   <span>LinkedIn</span>
                   <ArrowUpRight size={13} style={{ opacity: 0.6 }} />
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Official App Column */}
+          <div>
+            <h4 className="footer-heading">Mobile App</h4>
+            <p style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '14px', lineHeight: 1.5 }}>
+              Download our mobile app to practice questions, watch videos, and study 100% offline.
+            </p>
+            <GooglePlayButton />
           </div>
         </div>
 

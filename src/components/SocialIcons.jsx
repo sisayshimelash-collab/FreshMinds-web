@@ -54,3 +54,14 @@ export function LinkedInIcon({ size = 20, color = 'currentColor' }) {
     </svg>
   );
 }
+
+export function GooglePlayIcon({ size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.2v17.6a1.8 1.8 0 0 0 .6 1.4l9.5-9.6L3.6 1.8z" fill="#00C3FF"/>
+      <path d="M16.9 8.7L13.1 12.6l3.8 3.8 2.7-1.5c1.1-.6 1.1-1.6 0-2.2l-2.7-1.5z" fill="#FFD400"/>
+      <path d="M3.6 22.2l9.5-9.6 3.8 3.8-11.4 6.5c-.7.4-1.4.1-1.9-.7z" fill="#FF3A44"/>
+      <path d="M3.6 1.8c.5-.8 1.2-1.1 1.9-.7l11.4 6.5-3.8 3.8-9.5-9.6z" fill="#00E676"/>
+    </svg>
+  );
+}
