@@ -69,7 +69,7 @@ export default function CommunityPage() {
               style={{ background: 'white', display: 'flex', alignItems: 'center', gap: '10px' }}
             >
               <YouTubeIcon size={20} color="#DC2626" />
-              <span>Subscribe on YouTube ({siteConfig.community.youtubeSubscriberCount})</span>
+              <span>Subscribe on YouTube ({siteConfig.community.youtubeSubscribers})</span>
             </a>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function CommunityPage() {
                 <div className="stat-label" style={{ color: '#94A3B8' }}>Active Telegram Community</div>
               </div>
               <div>
-                <div className="stat-num" style={{ color: '#F87171' }}>{siteConfig.community.youtubeSubscriberCount}</div>
+                <div className="stat-num" style={{ color: '#F87171' }}>{siteConfig.community.youtubeSubscribers}</div>
                 <div className="stat-label" style={{ color: '#94A3B8' }}>YouTube Academy Subscribers</div>
               </div>
               <div>
@@ -160,7 +160,7 @@ export default function CommunityPage() {
                     <YouTubeIcon size={32} color="#DC2626" />
                   </div>
                   <span style={{ fontSize: '13px', fontWeight: 700, padding: '4px 12px', borderRadius: '999px', background: '#FEE2E2', color: '#B91C1C' }}>
-                    {siteConfig.community.youtubeSubscriberCount} Subscribers
+                    {siteConfig.community.youtubeSubscribers} Subscribers
                   </span>
                 </div>
 

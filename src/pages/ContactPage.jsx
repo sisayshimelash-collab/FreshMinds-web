@@ -118,7 +118,7 @@ export default function ContactPage() {
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <h4 style={{ fontSize: '15px', fontWeight: 'bold', margin: 0 }}>YouTube Academy</h4>
-                    <span style={{ fontSize: '11px', fontWeight: 'bold', background: '#FEE2E2', color: '#B91C1C', padding: '2px 8px', borderRadius: '999px' }}>{siteConfig.community.youtubeSubscriberCount}</span>
+                    <span style={{ fontSize: '11px', fontWeight: 'bold', background: '#FEE2E2', color: '#B91C1C', padding: '2px 8px', borderRadius: '999px' }}>{siteConfig.community.youtubeSubscribers}</span>
                   </div>
                   <p style={{ fontSize: '13px', color: '#64748B', margin: '3px 0 0' }}>@FreshMindsAcademy-c8x</p>
                 </div>

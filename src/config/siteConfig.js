@@ -24,6 +24,7 @@ export const siteConfig = {
     telegramUrl: "https://t.me/FreshMinds_Academy",
     youtubeSubscribers: "5,000+",
     youtubeSubscribersShort: "5K+",
+    youtubeSubscriberCount: "5,000+",
     youtubeUrl: "http://www.youtube.com/@FreshMindsAcademy-c8x",
     memberCount: "6,000+",
     memberCountLabel: "Telegram Community",
