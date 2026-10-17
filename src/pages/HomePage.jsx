@@ -86,7 +86,7 @@ export default function HomePage() {
               <div className="hero-eyebrow">
                 <span className="badge badge-primary">Official Platform</span>
                 <span className="badge badge-amber">🇪🇹 Built For Ethiopian Freshman</span>
-                <span className="badge badge-green">v2.0 Live on Google Play</span>
+                <span className="badge badge-green">v1.0 Live on Google Play</span>
               </div>
 
               <h1 className="hero-title">

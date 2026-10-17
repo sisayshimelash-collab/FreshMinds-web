@@ -8,7 +8,7 @@ import {
   HelpCircle,
   ArrowUpRight
 } from 'lucide-react';
-import { YouTubeIcon, LinkedInIcon, TelegramIcon, GooglePlayIcon } from '../components/SocialIcons';
+import { YouTubeIcon, TelegramIcon, GooglePlayIcon } from '../components/SocialIcons';
 import { siteConfig } from '../config/siteConfig';
 import SEO from '../components/SEO';
 
@@ -159,16 +159,26 @@ export default function ContactPage() {
               </div>
 
               {/* Socials Row */}
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <a 
-                  href={siteConfig.socials.linkedin}
+                  href={siteConfig.socials.telegram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary"
-                  style={{ width: '100%', justifyContent: 'center' }}
+                  style={{ width: '100%', justifyContent: 'center', fontSize: '13px', padding: '10px 14px' }}
                 >
-                  <LinkedInIcon size={16} color="#0A66C2" />
-                  <span>Connect on LinkedIn</span>
+                  <TelegramIcon size={16} color="#0088CC" />
+                  <span>Telegram</span>
+                </a>
+                <a 
+                  href={siteConfig.socials.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ width: '100%', justifyContent: 'center', fontSize: '13px', padding: '10px 14px' }}
+                >
+                  <YouTubeIcon size={16} color="#EF4444" />
+                  <span>YouTube</span>
                 </a>
               </div>
             </div>

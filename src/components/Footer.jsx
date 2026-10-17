@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ShieldCheck } from 'lucide-react';
-import { TelegramIcon, YouTubeIcon, LinkedInIcon, GooglePlayIcon } from './SocialIcons';
+import { TelegramIcon, YouTubeIcon, GooglePlayIcon } from './SocialIcons';
 import GooglePlayButton from './GooglePlayButton';
 import { siteConfig } from '../config/siteConfig';
 
@@ -72,18 +72,7 @@ export default function Footer() {
                   <ArrowUpRight size={13} style={{ opacity: 0.6 }} />
                 </a>
               </li>
-              <li>
-                <a
-                  href={siteConfig.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
-                >
-                  <LinkedInIcon size={16} color="#0EA5E9" />
-                  <span>LinkedIn</span>
-                  <ArrowUpRight size={13} style={{ opacity: 0.6 }} />
-                </a>
-              </li>
+
             </ul>
           </div>
 

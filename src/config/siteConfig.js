@@ -43,7 +43,7 @@ export const siteConfig = {
     googlePlayUrl: "https://play.google.com/store/apps/details?id=com.freshminds.mobile",
     badgeText: "Get it on Google Play",
     packageName: "com.freshminds.mobile",
-    version: "v2.0",
+    version: "v1.0",
     rating: "4.9",
     reviewsCount: "500+",
     downloadsCount: "10,000+",
@@ -94,7 +94,6 @@ export const siteConfig = {
     role: "Full-Stack Developer & Founder",
     title: "Full-Stack Developer & Founder",
     location: "Ethiopia",
-    linkedin: "https://www.linkedin.com/in/sisay-shimelash-2b6732379/",
     diaryStory: {
       title: "From a Student Filming on a Phone to a Learning Platform",
       quote: "I started FreshMinds Academy as a student filming explanations on my phone. No team. No platform. Just a university student who loves teaching and helping others.",
@@ -174,8 +173,7 @@ export const siteConfig = {
   // Official Social Channels
   socials: {
     telegram: "https://t.me/FreshMinds_Academy",
-    youtube: "http://www.youtube.com/@FreshMindsAcademy-c8x",
-    linkedin: "https://linkedin.com/company/freshminds-academy"
+    youtube: "http://www.youtube.com/@FreshMindsAcademy-c8x"
   },
 
   // Official Contact

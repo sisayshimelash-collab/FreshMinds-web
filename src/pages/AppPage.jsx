@@ -55,7 +55,7 @@ export default function AppPage() {
                     <span>OFFICIAL ANDROID APP NOW LIVE</span>
                   </div>
                   <div style={{ fontSize: '13px', color: '#64748B', fontWeight: 600, marginTop: '2px' }}>
-                    v2.0 • Ethiopian University Learning
+                    v1.0 • Ethiopian University Learning
                   </div>
                 </div>
               </div>

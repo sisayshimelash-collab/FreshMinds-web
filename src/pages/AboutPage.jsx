@@ -17,7 +17,6 @@ import {
   UserCheck,
   GraduationCap,
   Video,
-  ExternalLink,
   MessageCircleHeart
 } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
@@ -141,16 +140,9 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <a 
-                href={siteConfig.founder.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary btn-sm"
-                style={{ background: 'white', display: 'flex', alignItems: 'center', gap: '6px' }}
-              >
-                <span>LinkedIn Profile</span>
-                <ExternalLink size={13} />
-              </a>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: '#F8FAFC', border: '1px solid #E2E8F0', color: '#475569', fontSize: '12.5px', fontWeight: 600 }}>
+                <span>FreshMinds Academy</span>
+              </div>
             </div>
 
             {/* CEO Diary Post Lead Quote */}
