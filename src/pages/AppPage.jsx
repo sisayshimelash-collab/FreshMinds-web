@@ -123,7 +123,7 @@ export default function AppPage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-primary">Interactive Demo Tour</span>
-            <h2 className="section-title">Engineered Specifically for Ethiopian Freshmen</h2>
+            <h2 className="section-title">Engineered Specifically for Ethiopian Freshman Students</h2>
             <p className="section-subtitle">
               Explore the core learning screens designed directly into the native mobile app. Click any mode to see it live on the phone demo above!
             </p>

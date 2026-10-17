@@ -23,9 +23,9 @@ export default function CommunityPage() {
   return (
     <div style={{ paddingBottom: '80px' }}>
       <SEO 
-        title="Student Community | 6,000+ Telegram & 5,000+ YouTube Ethiopian Freshmen"
+        title="Student Community | 6,000+ Telegram & 5,000+ YouTube Ethiopian Freshman Students"
         description="Join over 11,000 Ethiopian freshman students across Telegram (@FreshMinds_Academy) and YouTube. Get instant exam notices, peer Q&A, and free Amharic video lessons."
-        keywords="FreshMinds telegram, Ethiopian freshman telegram group, FreshMinds youtube, Ethiopian freshman community, freshman past exams telegram, AAU, ASTU, Jimma University freshmen"
+        keywords="FreshMinds telegram, Ethiopian freshman telegram group, FreshMinds youtube, Ethiopian freshman community, freshman past exams telegram, AAU, ASTU, Jimma University freshman"
         canonicalPath="/community"
       />
 
@@ -38,7 +38,7 @@ export default function CommunityPage() {
           </div>
 
           <h1 style={{ fontSize: 'clamp(32px, 4.2vw, 50px)', lineHeight: 1.15, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
-            Where Ethiopian Freshmen Learn & Grow Together.
+            Where Ethiopian Freshman Students Learn & Grow Together.
           </h1>
 
           <p className="amharic-tag" style={{ fontSize: '22px', marginBottom: '16px', color: '#6366F1' }}>
@@ -129,7 +129,7 @@ export default function CommunityPage() {
                   Official Telegram Community
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6, marginBottom: '20px' }}>
-                  The daily heartbeat of Ethiopian freshmen. Instant university placement news, exam dates, shared PDF worksheets, and peer study groups.
+                  The daily heartbeat of Ethiopian freshman students. Instant university placement news, exam dates, shared PDF worksheets, and peer study groups.
                 </p>
 
                 <ul style={{ paddingLeft: '18px', color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.8, marginBottom: '28px' }}>
@@ -254,7 +254,7 @@ export default function CommunityPage() {
             </p>
             <ul style={{ paddingLeft: '20px', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px' }}>
               <li><strong>Academic Focus:</strong> Keep discussions centered on freshman university courses, exam preparation, and genuine educational growth.</li>
-              <li><strong>Mutual Respect:</strong> Encourage fellow freshmen; university transition is challenging and everyone is learning together.</li>
+              <li><strong>Mutual Respect:</strong> Encourage fellow freshman students; university transition is challenging and everyone is learning together.</li>
               <li><strong>Verified Information:</strong> Always verify and cite official university or Ministry notices before sharing to avoid misinformation.</li>
             </ul>
 

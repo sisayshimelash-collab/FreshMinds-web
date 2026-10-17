@@ -29,7 +29,7 @@ export default function AboutPage() {
     <div style={{ paddingBottom: '70px' }}>
       <SEO 
         title="About Us | Founder Sisay Shimelash & Mission"
-        description="Founded by Full-Stack Developer Sisay Shimelash, FreshMinds Academy grew from phone-filmed Amharic tutorials to an offline-first learning platform for 15,000+ Ethiopian freshmen."
+        description="Founded by Full-Stack Developer Sisay Shimelash, FreshMinds Academy grew from phone-filmed Amharic tutorials to an offline-first learning platform for 15,000+ Ethiopian freshman students."
         keywords="About FreshMinds Academy, Sisay Shimelash, Full-Stack Developer, Ethiopian university freshman education, founder story, Ethiopian edtech, AAU, ASTU, Jimma University"
         canonicalPath="/about"
       />
@@ -114,7 +114,7 @@ export default function AboutPage() {
             <span className="badge badge-primary">Founder's Story</span>
             <h2 className="section-title">The Story Behind FreshMinds Academy</h2>
             <p className="section-subtitle">
-              How a university student filming on a phone sparked a nationwide movement for Ethiopian freshmen.
+              How a university student filming on a phone sparked a nationwide movement for Ethiopian freshman students.
             </p>
           </div>
 
@@ -136,7 +136,7 @@ export default function AboutPage() {
                     <ShieldCheck size={15} color="#0284C7" />
                     <span>{siteConfig.founder.role}</span>
                     <span>•</span>
-                    <span>Kombolcha, Ethiopia</span>
+                    <span>{siteConfig.founder.location}</span>
                   </p>
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function AboutPage() {
                 </div>
                 <h4>2. The Student Letters</h4>
                 <p>
-                  Freshmen began writing back sharing their first-semester results. Students shared that the past-exam breakdowns helped them join medicine and engineering placements, and gave them hope and reassurance in the middle of exam stress.
+                  Freshman students began writing back sharing their first-semester results. Students shared that the past-exam breakdowns helped them join medicine and engineering placements, and gave them hope and reassurance in the middle of exam stress.
                 </p>
               </div>
 
@@ -233,7 +233,7 @@ export default function AboutPage() {
                   </span>
                 </div>
                 <p className="stepper-desc">
-                  Recognizing that freshmen across Ethiopia struggled with the steep transition into university courses and competitive departmental placement criteria with virtually no centralized support.
+                  Recognizing that freshman students across Ethiopia struggled with the steep transition into university courses and competitive departmental placement criteria with virtually no centralized support.
                 </p>
               </div>
             </div>

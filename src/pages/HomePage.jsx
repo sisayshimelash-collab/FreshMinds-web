@@ -85,7 +85,7 @@ export default function HomePage() {
             <div className="hero-content">
               <div className="hero-eyebrow">
                 <span className="badge badge-primary">Official Platform</span>
-                <span className="badge badge-amber">🇪🇹 Built For Ethiopian Freshmen</span>
+                <span className="badge badge-amber">🇪🇹 Built For Ethiopian Freshman</span>
                 <span className="badge badge-green">v2.0 Live on Google Play</span>
               </div>
 
@@ -420,7 +420,7 @@ export default function HomePage() {
                 <Users size={24} />
               </div>
               <h3>💬 6K+ Telegram Community</h3>
-              <p>Connect with thousands of fellow freshmen on Telegram to share notes, tips, and campus insights.</p>
+              <p>Connect with thousands of fellow freshman students on Telegram to share notes, tips, and campus insights.</p>
             </div>
 
             <div className="feature-card">
@@ -462,7 +462,7 @@ export default function HomePage() {
                   Join {siteConfig.community.telegramMembers} on Telegram
                 </h3>
                 <p style={{ color: '#E0F2FE', fontSize: '15px', lineHeight: 1.6, marginBottom: '24px' }}>
-                  Our verified Telegram channel is the daily meeting place for Ethiopian freshmen to download PDFs, ask questions, and get instant campus updates.
+                  Our verified Telegram channel is the daily meeting place for Ethiopian freshman students to download PDFs, ask questions, and get instant campus updates.
                 </p>
               </div>
               <a 
@@ -565,7 +565,7 @@ export default function HomePage() {
             <span className="badge badge-primary">Student FAQ</span>
             <h2 className="section-title">Frequently Asked Questions</h2>
             <p className="section-subtitle">
-              Everything Ethiopian freshmen need to know about course coverage, past exams, offline mode, and departmental placements.
+              Everything Ethiopian freshman students need to know about course coverage, past exams, offline mode, and departmental placements.
             </p>
           </div>
 

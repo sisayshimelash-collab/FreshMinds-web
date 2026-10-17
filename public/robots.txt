@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://freshmindsacademy.com
+Host: https://www.freshminds.pro.et
 
 # Sitemaps
-Sitemap: https://freshmindsacademy.com/sitemap.xml
+Sitemap: https://www.freshminds.pro.et/sitemap.xml

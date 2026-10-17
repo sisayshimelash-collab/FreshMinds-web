@@ -269,7 +269,7 @@ export default function ContactPage() {
             {[
               {
                 q: "What is FreshMinds Academy?",
-                a: "FreshMinds Academy is an Ethiopian student-centered education platform created to help freshmen learn, practice, and navigate university life with confidence through our dedicated mobile app and vibrant Telegram community."
+                a: "FreshMinds Academy is an Ethiopian student-centered education platform created to help freshman students learn, practice, and navigate university life with confidence through our dedicated mobile app and vibrant Telegram community."
               },
               {
                 q: "Does the website offer online courses?",
@@ -277,11 +277,11 @@ export default function ContactPage() {
               },
               {
                 q: "Which university freshman programs are supported?",
-                a: "We currently support Ethiopian Higher Education curriculums for both Natural Science and Social Science freshmen (including Logic & Critical Thinking, General Physics, Communicative English, General Psychology, Mathematics, and Geography)."
+                a: "We currently support Ethiopian Higher Education curriculums for both Natural Science and Social Science freshman programs (including Logic & Critical Thinking, General Physics, Communicative English, General Psychology, Mathematics, and Geography)."
               },
               {
                 q: "How can I join the community?",
-                a: "You can freely join our 5,000+ member Telegram community at @FreshMinds_Academy to receive daily university updates, peer assistance, and study materials."
+                a: "You can freely join our 6,000+ member Telegram community at @FreshMinds_Academy to receive daily university updates, peer assistance, and study materials."
               }
             ].map((faq, i) => (
               <div key={i} style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: '16px', padding: '20px' }}>

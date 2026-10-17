@@ -34,7 +34,7 @@ export const siteConfig = {
     appCount: "1",
     appCountLabel: "Dedicated Mobile App",
     description:
-      "A vibrant hub for Ethiopian freshmen to access curriculum updates, academic materials, exam tips, and peer encouragement."
+      "A vibrant hub for Ethiopian freshman students to access curriculum updates, academic materials, exam tips, and peer encouragement."
   },
 
   // Mobile App Download Configuration
@@ -93,12 +93,12 @@ export const siteConfig = {
     name: "Sisay Shimelash",
     role: "Full-Stack Developer & Founder",
     title: "Full-Stack Developer & Founder",
-    location: "Kombolcha / Addis Ababa, Ethiopia",
+    location: "Ethiopia",
     linkedin: "https://www.linkedin.com/in/sisay-shimelash-2b6732379/",
     diaryStory: {
       title: "From a Student Filming on a Phone to a Learning Platform",
       quote: "I started FreshMinds Academy as a student filming explanations on my phone. No team. No platform. Just a university student who loves teaching and helping others.",
-      fullStory: "I remembered how overwhelming freshman year felt: new courses, scattered study materials, exam pressure. I've always enjoyed explaining things to others, so I started sharing what I knew. I created a Telegram channel and a YouTube channel, filming tutorials on my phone, explaining every topic step by step in Amharic, and pairing each video with notes and exam resources for Ethiopian university freshmen. Then students started writing to me. Some shared their first-semester results and told me my videos helped them join medicine. Others wrote that in the middle of exam stress, the materials gave them hope and reassurance. But students were hunting through scattered Telegram messages just to find what they needed. 'What if everything lived in one place?' That question became the FreshMinds Academy mobile app."
+      fullStory: "I remembered how overwhelming freshman year felt: new courses, scattered study materials, exam pressure. I've always enjoyed explaining things to others, so I started sharing what I knew. I created a Telegram channel and a YouTube channel, filming tutorials on my phone, explaining every topic step by step in Amharic, and pairing each video with notes and exam resources for Ethiopian university freshman students. Then students started writing to me. Some shared their first-semester results and told me my videos helped them join medicine. Others wrote that in the middle of exam stress, the materials gave them hope and reassurance. But students were hunting through scattered Telegram messages just to find what they needed. 'What if everything lived in one place?' That question became the FreshMinds Academy mobile app."
     }
   },
 
@@ -134,7 +134,7 @@ export const siteConfig = {
 
   // Centralized SEO Configuration
   seo: {
-    siteUrl: "https://freshmindsacademy.com",
+    siteUrl: "https://www.freshminds.pro.et",
     siteName: "FreshMinds Academy",
     titleTemplate: "%s | FreshMinds Academy",
     defaultTitle: "FreshMinds Academy | Ethiopian University Freshman Courses, Past Exams & App",
